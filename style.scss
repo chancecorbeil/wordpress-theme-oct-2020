@@ -1,0 +1,820 @@
+/*!
+Theme Name: CC Theme Sept 2020
+Theme URI: http://underscores.me/
+Author: Chance Corbeil
+Author URI: https://chancecorbeil.com/
+Description: Description
+Version: 1.0.0
+Tested up to: 5.4
+Requires PHP: 5.6
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: oct-2020-theme
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned.
+
+CC Theme Sept 2020 is based on Underscores https://underscores.me/, (C) 2012-2020 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
+*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Generic
+	- Normalize
+	- Box sizing
+# Base
+	- Typography
+	- Elements
+	- Links
+	- Forms
+## Layouts
+# Components
+	- Navigation
+	- Posts and pages
+	- Comments
+	- Widgets
+	- Media
+	- Captions
+	- Galleries
+# plugins
+	- Jetpack infinite scroll
+# Utilities
+	- Accessibility
+	- Alignments
+
+--------------------------------------------------------------*/
+
+// Import variables and mixins.
+@import "sass/abstracts/abstracts";
+
+/*--------------------------------------------------------------
+# Generic
+--------------------------------------------------------------*/
+
+/* Normalize
+--------------------------------------------- */
+@import "sass/generic/normalize";
+
+/* Box sizing
+--------------------------------------------- */
+@import "sass/generic/box-sizing";
+
+/*--------------------------------------------------------------
+# Base
+--------------------------------------------------------------*/
+@import "sass/base/base";
+
+/*--------------------------------------------------------------
+# Layouts
+--------------------------------------------------------------*/
+// @import "layouts/content-sidebar"; // Uncomment this line for a sidebar on right side of your content.
+// @import "layouts/sidebar-content"; // Uncomment this line for a sidebar on left side of your content.
+
+/*--------------------------------------------------------------
+# Components
+--------------------------------------------------------------*/
+@import "sass/components/components";
+
+/*--------------------------------------------------------------
+# Plugins
+--------------------------------------------------------------*/
+
+/* Jetpack infinite scroll
+--------------------------------------------- */
+@import "sass/plugins/jetpack/infinite-scroll";
+
+/*--------------------------------------------------------------
+# Utilities
+--------------------------------------------------------------*/
+
+/* Accessibility
+--------------------------------------------- */
+@import "sass/utilities/accessibility";
+
+/* Alignments
+--------------------------------------------- */
+@import "sass/utilities/alignments";
+
+
+// 1. Import the initial variables
+@import "../sass/bulma/sass/utilities/initial-variables";
+@import "../sass/bulma/sass/utilities/functions";
+
+
+// 2. Set your own initial variables
+
+// Colors
+$darkbluetitles: #3E485C;
+$darkblue: #36475D;
+$lightblue: #34AFC8;
+$salmon: #F26D69;
+$limegreen: #BBD86F;
+
+a:visited {
+	color: $black;
+}
+
+.posted-on a,
+.posted-on a:visited {
+	color: $lightblue;
+}
+
+.entry-meta a,
+.entry-content .entry-meta a {
+	color: $lightblue;
+	text-decoration: none;
+}
+
+.entry-content a {
+	color: $black;
+	text-decoration: underline;
+	text-decoration-color: $salmon;
+	text-decoration-thickness: 3px;
+}
+
+.page-content, .entry-content, .entry-summary {
+    margin: 0;
+}
+
+.single .subtitle,
+.single .subtitle:not(:last-child) {
+	margin-bottom: 0;
+}
+
+$primary: $darkbluetitles;
+
+button.is-salmon {
+	background-color: $salmon;
+	color: #ffffff;
+}
+
+nav .is-lightblue.navbar-item a {
+	color: $lightblue;
+}
+
+
+// Add a serif family
+$family-serif: 'Montserrat', sans-serif;
+// Use the new serif family
+$family-primary: $family-serif;
+
+$text: $black;
+$body-size: 18px;
+$body-weight: 300;
+$body-line-height: 1.666;
+
+$section-padding: 65px 35px;
+
+$desktop: 1138px + (2 * $gap);
+$widescreen: 1138px + (2 * $gap);
+$fullhd: 1138px + (2 * $gap);
+
+
+// Titles
+h1 { 
+	font-weight: bold;
+	text-transform: uppercase;
+	text-align: center;
+ }
+
+ h1.title { 
+	color: #ffffff;
+	font-size: 60px;
+	letter-spacing: 2px;
+	font-weight: 900;
+}
+
+h2.title,
+.entry-content h2 {
+	color: $darkbluetitles;
+	font-weight: $weight-semibold;
+	font-size: 36px;
+
+	a {
+		color: $darkbluetitles;
+	}
+}
+
+h3.title,
+h3.hrf-title,
+.entry-content h3 {
+	color: $darkbluetitles;
+	font-weight: $weight-bold;
+	font-size: 38px;
+}
+
+h3.hrf-title {
+	line-height: 1.125;
+}
+
+h3.title.is-lightblue,
+h3.title.is-lightblue a {
+	color: $lightblue;
+}
+
+h3.title.is-limegreen,
+h3.title.is-limegreen a {
+	color: $limegreen;
+}
+
+h3.title.is-salmon,
+h3.title.is-salmon a {
+	color: $salmon;
+}
+
+p.subtitle { 
+	color: $lightblue;
+	font-weight: $weight-bold;
+	text-transform: uppercase; 
+	font-size: 24px;
+}
+
+// General
+
+html,
+body {
+	overflow-x: hidden;
+}
+
+
+
+.hrf-faq-list article:last-of-type {
+	display: none !important;
+}
+
+.hrf-faq-list p {
+	padding-bottom: 12px;
+}
+
+.post, .page {
+    margin: 0;
+}
+
+section.announcementbar {
+	background-color: $darkblue;
+	color: $white;
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+
+// Buttons
+
+.button {
+	border-radius: 0 !important;
+	border: none !important;
+	color: $white;
+	font-weight: $weight-bold;
+	text-transform: uppercase; 
+	font-size: 15px;
+	letter-spacing: 1px;
+}
+
+section .button:hover, .button.is-hovered {
+    color:  $white;
+}
+
+.button.is-lightblue {
+	color: $white;
+	background-color: $lightblue;
+}
+
+.button.is-limegreen {
+	color: $white;
+	background-color: $limegreen;
+}
+
+.button.is-salmon {
+	color: $white;
+	background-color: $salmon;
+}
+
+
+// Navigation
+
+nav a,
+nav a:visited {
+	border-radius: 0;
+	color: $darkblue;
+	font-weight: $weight-bold;
+	text-transform: uppercase; 
+	font-size: 16px;
+	letter-spacing: 1px;
+}
+
+nav li.navbar-item {
+	padding-left: 16px;
+	padding-right: 16px;
+}
+
+nav li.button {
+	color: $white;
+	top: 23px;
+	height: 30px;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-right: 16px;;
+
+	a {
+		color: $white;
+	}
+}
+
+@media screen and (max-width: 1201px) {
+
+	nav .navbar-menu {
+		background-color: white;
+		box-shadow: none;
+		
+		.button {
+			text-align: left;
+			color: $darkblue;
+			background-color: $white;
+			top: auto;
+			height: auto;
+			padding: 0.5rem 0.75rem;
+		}
+
+		li.navbar-item,
+		li.button {
+			padding: 3px 0;
+		}
+
+		li a,
+		li a.is-light-blue,
+		li a.is-lightblue.navbar-item,
+		li a.is-lightblue.navbar-item a  {
+			color: $darkblue !important; 
+		}
+	}
+
+	nav .navbar-burger {
+		margin-top: 16px;
+	}
+		
+	nav .navbar-burger:hover {
+		background-color: transparent;
+	}
+
+}
+
+// Page template
+
+.hero nav.tabs.is-boxed {
+	background-color: $darkbluetitles;
+
+	ul {
+	align-items: center;
+	justify-content: center;
+	
+		a,
+		a:visited {
+			border-radius: 0;
+			color: $white;
+			font-weight: $weight-bold;
+			text-transform: uppercase; 
+			font-size: 15px;
+			padding: 18px 23px;
+		}
+
+	}
+}
+
+// Main Content Area
+
+.maincontentarea {
+
+	p {
+		padding-bottom: 12px;
+	}
+	
+	.pageparticle {
+		border-bottom: 1px solid $salmon;
+		padding-top: 38px;
+		padding-bottom: 60px;
+	}
+
+	.pageparticle:first-of-type {
+		border-bottom: 1px solid $salmon;
+		padding-top: 0;
+		padding-bottom: 60px;
+	}
+
+	.pageparticle:last-of-type {
+		border-bottom: 0 solid $salmon;
+		padding-top: 38px;
+		padding-bottom: 60px;
+	}
+	
+	hr { 
+		background-color: $salmon;
+		margin-top: 38px;
+		margin-bottom: 60px;
+	}
+
+	margin-bottom: 1rem;
+
+}
+
+// News
+
+.newsarticle {
+	.newscontent {
+		padding-bottom: 25px;
+	}
+}
+
+.newssidebarparticle {
+	display: none;
+}
+
+.post-type-archive-news .newssidebarparticle {
+	display: block;
+}
+
+// Sidebar
+
+.sidebar {
+	p.subtitle { 
+		color: $salmon;
+		font-size: 18px;
+	}
+
+	.pageparticle {
+		margin-bottom: 115px;
+	}
+
+	.pageparticle:last-of-type {
+		margin-bottom: 0;
+	}
+
+	.pageparticle {
+		.title.is-3 {
+			font-size: 28px;
+		}
+
+		p {
+			padding-bottom: 25px;
+		}
+
+		.socialmediafeature {
+			background-color: $limegreen;
+			padding: 35px;
+			text-align: center;
+		}
+
+		.quotefeature {
+			h3 {
+				font-size: 32px;
+				font-weight: normal;
+				font-family: Georgia, 'Times New Roman', Times, serif;
+				color: $lightblue;
+			}
+			p {
+				padding-bottom: 0;
+				text-align: center;
+				font-size: 14px;
+				font-weight: 500;
+			}
+	
+		}
+	}
+	
+	.pageparticle {
+		p:last-of-type {
+			padding-bottom: 25px;
+		}
+	}
+}
+
+@media screen and (min-width: 769px) {
+
+	.sidebar {
+		margin-top: 155px;
+	}
+
+}
+
+.pageparticle {
+	p {
+		padding-bottom: 12px;
+	}
+}
+
+.pageparticle {
+	p:last-of-type {
+		padding-bottom: 0;
+	}
+}
+
+// Home Page
+
+.homepagesections {
+	.section {
+		padding: 40px 0;
+
+		p {
+			font-size: 20px;
+			font-weight: 600;
+			color: $darkblue;
+			padding-bottom: 40px;
+		}
+
+		h3 {
+			margin-bottom: 45px;
+		}
+	}
+}
+
+section.homealtsection {
+	h3 {
+		text-transform: uppercase;
+	}
+}
+
+section.widehomesection {
+	padding-left: 0;
+	padding-right: 0;
+	}
+
+section.newssection {
+
+	h2.title.newsspotlights {
+		font-size: 53px;
+		font-weight: bold;
+		text-transform: uppercase;
+		color: $lightblue;
+		margin-bottom: 0;
+	}
+
+	.seeallnews {
+		text-align: right;
+	}
+
+	.level {
+		margin-bottom: 62px;
+
+		a,
+		a:visited {
+			font-size: 18px;
+			font-weight: 500;
+			color: $darkbluetitles;
+		}
+	}
+
+	.newssecondcolumn {
+		border-left: 2px solid $lightblue;
+	}
+	
+	.pageparticle {
+	
+			h3.title {
+				font-size: 30px;
+				font-weight: bold;
+				color: $darkbluetitles;
+				margin-bottom: 14px;
+
+				a {
+					color: $darkbluetitles;
+				}
+			}
+	
+			p.sourceanddate {
+				font-size: 16px;
+				font-weight: bold;
+				color: $salmon;
+				padding-bottom: 25px;
+			}
+	
+			p {
+				padding-bottom: 35px;
+			}
+			
+	}
+
+}
+
+.home .footerhouses {
+	display: none;
+}
+
+@media screen and (max-width: 768px) {
+
+	.homepagesections {
+		.section {
+			h3.title {
+				margin-bottom: 23px;
+				font-size: 28px;
+			}
+		}
+	}
+
+	section.newssection {
+
+		.seeallnews {
+			text-align: center;
+		}
+
+		h2.title.newsspotlights {
+			text-align: center;
+			font-size: 28px;
+		}
+
+		.newssecondcolumn {
+			border-left: 0px solid $lightblue;
+		}
+
+	}
+
+
+}
+	
+
+// Header
+
+section.headersection {
+	padding-top: 40px;
+	padding-bottom: 33px;
+
+}
+
+// Footer
+
+section.footersection {
+	background-color: $darkblue;
+		padding-top: 62px;
+		padding-bottom: 62px;
+	background-image: url(http://paneltopagetheme.com/wp-content/uploads/2020/09/footer-bg.png);
+	background-position: bottom right;
+	background-repeat: no-repeat;
+}
+
+.footerhouses.aligncenter {
+	margin-bottom: 0;
+}
+
+footer {
+	color: $white;
+
+	h4.title.is-4 {
+		color: $white;
+		font-size: 20px;
+		font-weight: bold;
+		text-transform: uppercase;
+		margin-bottom: 12px;
+
+	}
+
+	h5.title.is-5 {
+		color: $lightblue;
+		font-size: 14px;
+		font-weight: bold;
+		text-transform: uppercase;
+		margin-bottom: 12px;
+	}
+
+	p {
+		font-size: 14px;
+		font-weight: 600;
+		margin-bottom: 12px;
+	}
+
+	a,
+	a:visited {
+		color: $white;
+	}
+
+	ul {
+		a {
+			text-transform: uppercase;
+			font-size: 12px;
+			font-weight: normal;
+		}
+	}
+
+	.copyrightsection {
+		p {
+		font-size: 12px;
+		font-weight: normal;
+		}
+	}
+
+	hr {
+		background-color: $lightblue;
+	}
+
+	// Footer Newsletter Form
+	.ctct-inline-form {
+		.ctct-form-embed.form_0 .ctct-form-defaults {
+			background-color: transparent;
+			padding: 0;
+			font-family: $family-primary;
+		}
+
+		.ctct-form-embed.form_0 .ctct-form-defaults .ctct-form-text, .ctct-form-embed.form_0 .ctct-form-custom .ctct-form-label, .ctct-form-embed.form_0 .ctct-form-custom .ctct-form-listname, .ctct-form-embed.form_0 .ctct-form-custom .ctct-form-lists-legend, .ctct-form-embed.form_0 .ctct-form-custom .ctct-form-date-slash, .ctct-form-embed.form_0 .ctct-form-defaults .ctct-gdpr-text, .ctct-form-embed.form_0 .ctct-form-defaults .ctct-gdpr-text .ctct-form-footer-link, .ctct-form-embed.form_0 .ctct-form-defaults .ctct-gdpr-text .ctct-form-footer-privacy-link {
+			color: #fff;
+		}
+
+		div.ctct-form-embed form.ctct-form-custom .ctct-form-required:before {
+			display: none;
+		}
+
+		div.ctct-form-embed form.ctct-form-custom label.ctct-form-label {
+			font-size: 14px;
+		}
+
+		div.ctct-form-embed form.ctct-form-custom button.ctct-form-button {
+			border-radius: 0 !important;
+			border: none !important;
+			color: $white;
+			font-weight: $weight-bold;
+			text-transform: uppercase; 
+			font-size: 15px;
+			letter-spacing: 1px;
+			width: auto;
+		}
+
+		.ctct-form-embed.form_0 .ctct-form-defaults .ctct-form-header {
+			color: #ffffff;
+		}
+
+		.g-recaptcha {
+			display: none;
+		}
+	}
+
+	.level-item {
+		float: left;
+	}
+}
+
+.footertopfeature {
+	background-color: $lightblue;
+
+	.title.is-2,
+	.title {
+		color: $white;
+		padding-right: 25px;
+	}
+
+	.button {
+		margin-top: 3px;
+	}
+}
+
+
+@media screen and (max-width: 768px) {
+
+	.footertopfeature {
+	
+		.title.is-2
+		,
+		.title {
+			font-size: 28px;
+			padding-right: 0;
+		}
+
+	}
+
+}
+
+.socialmediafeature .level {
+	display: flex;
+}
+
+
+
+// 3. Set the derived variables
+// Use the new pink as the primary color
+$primary: $darkblue;
+$primary-invert: $white;
+
+
+// 4. Setup your Custom Colors
+$linkedin: #0077b5;
+$linkedin-invert: findColorInvert($linkedin);
+$twitter: #55acee;
+$twitter-invert: findColorInvert($twitter);
+$github: #333;
+$github-invert: findColorInvert($github);
+
+// 5. Add new color variables to the color map.
+@import "../sass/bulma/sass/utilities/derived-variables";
+$addColors: (
+  "twitter":($twitter, $twitter-invert),
+  "linkedin": ($linkedin, $linkedin-invert),
+  "github": ($github, $github-invert)
+);
+$colors: map-merge($colors, $addColors);
+
+// 6. Import the rest of Bulma
+@import "../sass/bulma/bulma";
+
+
+
+
